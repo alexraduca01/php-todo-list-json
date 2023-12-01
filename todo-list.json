@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "text": "Catturare Giratina",
+        "done": false
+    },
+    {
+        "id": 2,
+        "text": "Battere la lega",
+        "done": false
+    },
+    {
+        "id": 3,
+        "text": "Completare il pokèdex",
+        "done": false
+    },
+    
+]

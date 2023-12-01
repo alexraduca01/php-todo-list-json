@@ -3,23 +3,6 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            todos: [
-                {
-                    id: 1,
-                    text: 'Catturare Giratina',
-                    done: false,
-                },
-                {
-                    id: 2,
-                    text: 'Battere la lega',
-                    done: true,
-                },
-                {
-                    id: 3,
-                    text: 'Completare il pokédex',
-                    done: false,
-                },
-            ],
             objId: 3,
         };
     },
