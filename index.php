@@ -22,8 +22,8 @@
                 <header class="text-center my-3">
                     <img src="img/download.jfif" class="logo" alt="logo">
                     <div class="d-flex justify-content-center gap-2 my-3">
-                        <input type="text" class="form-control w-50" v-model="todoText" @keyup.enter="addTodo()">
-                        <button @click="addTodo()" class="btn btn-danger">Aggiungi</button>
+                        <input type="text" class="form-control w-50" v-model="todoText" @keyup.enter="addTodo(), playSound('audio/Pokemon (A Button) sound effects.mp3')">
+                        <button @click="addTodo(), playSound('audio/Pokemon (A Button) sound effects.mp3')" class="btn btn-danger">Aggiungi</button>
                     </div>
                 </header>
 
@@ -31,7 +31,7 @@
                     <div class="list-group">
                         <div v-for="(todo, index) in todos" class="d-flex justify-content-between list-group-item list-group-item-action bg-gradient bg-danger" v-if="todos.length > 0">
                             <span class="cursor-pointer text-white" :class="{'line-through': todo.done}">{{ todo.text }}</span>
-                            <i class="fa-solid text-white cursor-pointer fa-xmark"></i>
+                            <i @click="removeTodo(index) ,playSound('audio/Among Us (Role Reveal) - Sound Effect (HD).mp3')" class="fa-solid text-white cursor-pointer fa-xmark"></i>
                         </div>
                         <div class="list-group-item list-group-item-action bg-gradient bg-danger text-center" v-else>
                             <span class="text-white fs-1">Hai fatto tutto!</span>

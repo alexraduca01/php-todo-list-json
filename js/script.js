@@ -23,6 +23,20 @@ createApp({
             });
             this.todoText = '';
         },
+        removeTodo(index){
+            const data = new FormData();
+            data.append('deleteTodo', index);
+            axios.post(this.apiUrl, data).then((res) => {
+                this.todos = res.data;
+            });
+            this.todoText = '';
+        },
+        playSound (sound) {
+            if(sound) {
+              const audio = new Audio(sound);
+              audio.play();
+            }
+        },
     },
     mounted(){
         this.readTodo();
