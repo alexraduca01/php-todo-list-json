@@ -6,7 +6,6 @@ createApp({
             apiUrl: 'server.php',
             todos: [],
             todoText: '',
-            objId: 3,
         };
     },
     methods: {
@@ -29,7 +28,6 @@ createApp({
             axios.post(this.apiUrl, data).then((res) => {
                 this.todos = res.data;
             });
-            this.todoText = '';
         },
         playSound (sound) {
             if(sound) {
