@@ -30,7 +30,7 @@
                 <div>
                     <div class="list-group">
                         <div v-for="(todo, index) in todos" class="d-flex justify-content-between list-group-item list-group-item-action bg-gradient bg-danger" v-if="todos.length > 0">
-                            <span class="cursor-pointer text-white" :class="{'line-through': todo.done}">{{ todo.text }}</span>
+                            <span class="cursor-pointer text-white" @click="updateTodo(index)" :class="{'line-through': todo.done}">{{ todo.text }}</span>
                             <i @click="removeTodo(index) ,playSound('audio/Among Us (Role Reveal) - Sound Effect (HD).mp3')" class="fa-solid text-white cursor-pointer fa-xmark"></i>
                         </div>
                         <div class="list-group-item list-group-item-action bg-gradient bg-danger text-center" v-else>

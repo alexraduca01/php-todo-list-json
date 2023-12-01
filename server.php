@@ -17,6 +17,12 @@ if(isset($_POST['deleteTodo'])){
     array_splice($todoList, $index, 1);
     file_put_contents('todo-list.json', json_encode($todoList));
 }
+if (isset($_POST['updateTodo'])) {
+    $done = $_POST['updateTodo'];
+    $todoList[$done]['done'] = !$todoList[$done]['done'];
+    file_put_contents('todo-list.json', json_encode($todoList));
+}
+
 
 header('Content-Type: application/json');
 

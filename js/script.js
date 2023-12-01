@@ -29,6 +29,13 @@ createApp({
                 this.todos = res.data;
             });
         },
+        updateTodo(index){
+            const data = new FormData();
+            data.append('updateTodo', index);
+            axios.post(this.apiUrl, data).then((res) => {
+                this.todos = res.data;
+            });
+        },
         playSound (sound) {
             if(sound) {
               const audio = new Audio(sound);
