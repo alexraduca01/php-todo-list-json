@@ -3,29 +3,29 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            apiUrl: 'server.php',
+            todos: [],
+            todoText: '',
             objId: 3,
         };
     },
     methods: {
-        removeTodo(index) {
-            this.todos.splice(index, 1);
-        },
-        addTodo(){
-            this.todos.push({
-                id: this.objId++,
-                text: this.todoText,
-                done: false,
+        readTodo(){
+            axios.get(this.apiUrl).then((res) => {
+                this.todos = res.data;
             })
         },
-        doneTodo(index){
-            this.todos[index].done =!this.todos[index].done;
-        },
-        playSound (sound) {
-            if(sound) {
-              const audio = new Audio(sound);
-              audio.play();
-            }
+        addTodo(){
+            const data = new FormData();
+            data.append('todo', this.todoText);
+            axios.post(this.apiUrl, data).then((res) => {
+                this.todos = res.data;
+            });
+            this.todoText = '';
         },
     },
+    mounted(){
+        this.readTodo();
+    }
 }).mount('#app');
 

@@ -1,18 +1,1 @@
-[
-    {
-        "id": 1,
-        "text": "Catturare Giratina",
-        "done": false
-    },
-    {
-        "id": 2,
-        "text": "Battere la lega",
-        "done": false
-    },
-    {
-        "id": 3,
-        "text": "Completare il pokèdex",
-        "done": false
-    },
-    
-]
+[{"text":"Catturare Giratina","done":false},{"text":"Battere la lega","done":false},{"text":"Completare il pok\u00e8dex","done":false}]
